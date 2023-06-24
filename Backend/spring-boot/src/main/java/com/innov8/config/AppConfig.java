@@ -51,6 +51,8 @@ public class AppConfig {
 //
 
                               .requestMatchers("/swagger-ui*/**","/v3/api-docs/**").permitAll()
+                            .requestMatchers("/openai/**").permitAll()
+                            .requestMatchers("/questions/**").permitAll()
                             .requestMatchers(HttpMethod.POST,"/users").permitAll()
                             .requestMatchers("/users/**","/hello","/ADMIN/**").hasRole("ADMIN")
                             .requestMatchers("users/**").hasAnyRole("ADMIN","USER")
